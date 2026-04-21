@@ -1,0 +1,21 @@
+# Prompt narrativo para reescribir el paper
+
+Quiero que actúes como un data scientist senior con experiencia en redacción académica y phd en estadistica y me ayudes a replantear un paper sobre regulación del alquiler en Barcelona para que gane claridad, coherencia y nivel de publicación. El paper actual paper_alquiler_bcn_v3.tex y los notebooks de análisis son rent_bcn_modelos_v4.ipynb y eda_limpio_v1.ipynb para que tengas contexto completo.
+
+Ahora mismo el trabajo es sólido en lo técnico, pero está organizado alrededor de módulos metodológicos —panel, clasificación, series temporales y sensitivity analysis— y eso hace que la narrativa se sienta fragmentada. Lo que quiero es pasar a una estructura guiada por preguntas de investigación, donde los métodos queden claramente subordinados a las preguntas y no al revés.
+
+Importante: Para ello generaras un nuevo paper llamado paper_alquiler_bcn_v4.tex con su respectivo directorio images_v4/ . Escribelo como nosotros 
+
+Las tres preguntas que me interesa que articulen el paper son las siguientes: primero, cómo se asocia la regulación con la evolución de la actividad contractual en Barcelona, tanto a nivel de barrio mediante panel con efectos fijos como a nivel agregado mediante series temporales. Segundo, dónde y cuándo emerge la tensión contractual, y qué factores permiten anticiparla, entendiendo esta parte como un módulo descriptivo y predictivo, no causal. Tercero, qué impacto tienen las distintas intervenciones regulatorias sobre el precio nominal, el precio real y el número de contratos a lo largo del tiempo, especialmente mediante un diseño de series temporales interrumpidas (ITS).
+
+Quiero que me propongas una nueva estructura para el paper, con títulos de sección claros, un flujo argumental más limpio y una evaluación crítica de qué partes conviene mantener, simplificar, eliminar o mover a apéndice. Me interesa especialmente que revises si cada bloque metodológico está bien alineado con su pregunta correspondiente, y que señales si hay redundancias o módulos que no aportan de forma sustantiva al argumento central.
+
+Además, quiero que pongas un énfasis especial en la lógica contrafactual del paper. El uso del ITS es central porque, en el fondo, construye un contrafactual modelado a partir de la tendencia previa a la intervención, pero eso no está explicado con suficiente claridad. Me interesa que me ayudes a hacer explícito qué representa el escenario “sin regulación”, bajo qué supuestos puede leerse como comparación ceteris paribus y cuáles son sus límites, especialmente por la ausencia de un grupo de control real. Me gustaría que propongas cómo integrar esa lógica contrafactual en la introducción, la metodología y la interpretación de resultados.
+
+También es muy importante que el paper incorpore una breve pero clara sección de contexto regulatorio e institucional. Necesito que se explique bien la cronología entre 2020 y 2024: la ley catalana de 2020, su anulación por el Tribunal Constitucional en 2022, el período sin regulación efectiva, la ley estatal de 2023 y la implementación efectiva del control de precios en 2024. Es clave distinguir entre entrada en vigor legal, declaración de zonas tensionadas y aplicación efectiva de los límites de precios, y conectar todo eso directamente con el diseño econométrico.
+
+En la discusión, quiero que me ayudes a reforzar especialmente la interpretación del efecto composición, la no retroactividad de los contratos, la incertidumbre regulatoria y el período de transición de 2023 como una fase de anticipación. También me interesa que identifiques afirmaciones que hoy estén demasiado fuertes o poco defendidas y propongas una versión más rigurosa y académicamente sólida.
+
+Por último, ten en cuenta varias observaciones editoriales: conviene sustituir URLs visibles por hipervínculos, mejorar la consistencia y legibilidad de algunas figuras, corregir interpretaciones problemáticas en las secciones 6.2 y 6.3, eliminar la noción de “prima de riesgo regulatorio” y reemplazarla por una lectura basada en efecto composición, transición regulatoria, no retroactividad y comportamiento anticipado, además de eliminar la sección de agradecimientos.
+
+Si es posible, me gustaría que además propongas una versión reescrita de la introducción y unos nuevos títulos de secciones alineados con esta nueva estructura.
