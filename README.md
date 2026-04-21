@@ -1,6 +1,6 @@
 # Regulación del Alquiler en Barcelona: Análisis Econométrico y Forecasting
 
-**Autores:** Soto · Ortiz · Delgado  
+**Autores:** Katherine Soto · Juan R. Ortiz · Emilio Delgado  
 La Salle — Ramon Llull University
 
 ![Barcelona](images/barcelona-sagrada-familia.jpg)
@@ -150,3 +150,15 @@ Implementación de los modelos que contrastan las tres hipótesis:
 - **H1 · Regresión de panel con efectos fijos** — within estimator, dummies regulatorias (D_ley11, D_tc_gap, D_ley12)
 - **H2 · Clasificación supervisada** — Random Forest, Logistic Regression, Panel Logit con FE de barrio; evaluación AUC-ROC y SHAP
 - **H3 · SARIMAX + ITS-3** — forecasting de precios y contratos por distrito; Interrupted Time Series con tres regímenes y errores HAC
+
+---
+
+## Conclusiones
+
+**H1 — No se rechaza.** La regulación produjo efectos estadísticamente distinguibles sobre precio y volumen, aunque con signo asimétrico según el régimen. La Ley 11/2020 genera un level shift inmediato de −1.11 €/m² en precio nominal (p = 0.007) sin efecto en precio real. La derogación del TC tiene el mayor impacto en precio real (−0.558 €/m², p = 0.003). La Ley 12/2023 contrae el volumen contractual (−1 588 contratos/trimestre, p = 0.007) pero eleva el precio real (+0.495 €/m², p = 0.034), coherente con un efecto composición. Sin embargo, no se detecta diferencial significativo entre barrios de renta alta y baja (β = −0.019, p = 0.301), por lo que la hipótesis de heterogeneidad geográfica en elasticidad se rechaza.
+
+**H2 — Se acepta** El Random Forest alcanza AUC = 0.684 (validación cruzada temporal: 0.684 ± 0.083), superando el umbral de 0.65 establecido en la hipótesis. La ingeniería de lag features es el factor determinante: el lag-4 del crecimiento de contratos es la señal dominante según SHAP (|φ̄| = 0.093), por encima de todas las variables de política regulatoria.
+
+**H3 — Se acepta** El modelo ITS-3 identifica rupturas estructurales estadísticamente significativas en las series de precio nominal, precio real y volumen contractual para cada uno de los tres regímenes regulatorios, en todos los distritos analizados. Los intervalos de confianza SARIMAX son estadísticamente válidos (test ARCH p > 0.05) salvo en la serie de contratos de Eixample.
+
+> **Mecanismo central:** La paradoja precio↑ / volumen↓ bajo la Ley 12/2023 es geográficamente consistente y cuantitativamente robusta al sesgo de sustitución hacia contratos de temporada hasta el 20.3% de migración estimada. El efecto composición — salida del mercado de las unidades de menor precio — es la explicación más plausible.
